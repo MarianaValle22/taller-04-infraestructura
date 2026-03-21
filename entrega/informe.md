@@ -1,79 +1,80 @@
 # Informe Técnico del Taller
 
 ## Nombre del Taller
-**Taller 04 - Infraestructura y Topologías**
+_Taller 4 - Mapa de Infraestructura y Diagnóstico Técnico_
 
 ## Integrantes del equipo
-- Valentina Lopez
-- Mariana Valle
-- Laura Rodriguez
+| Nombre | Correo Electrónico |
+|---|---|
+| Valentina Alejandra López Romero | valentinalopro@unisabana.edu.co |
+| Mariana Valle Moreno | marianavamo@unisabana.edu.co |
+| Laura Camila Rodriguez Leon | laurarodleo@unisabana.edu.co |
 
 ## Descripción general del trabajo
-En este taller se construyó el mapa de infraestructura del caso **RedExpress**, una plataforma de logística con una arquitectura híbrida compuesta por servicios en la nube, procesamiento regional, centros de distribución y dispositivos móviles usados por los mensajeros.
-
-El propósito fue representar los componentes principales del sistema, entender cómo se relacionan entre sí e identificar riesgos técnicos como puntos únicos de falla, cuellos de botella y limitaciones de escalabilidad.
+Describa brevemente el objetivo del taller y cómo se desarrolló la actividad.
 
 ## Proceso de desarrollo
-Para desarrollar el trabajo, primero se revisó el contexto del caso y los elementos que debían aparecer en el modelo. A partir de eso, se definieron como componentes principales el **API Gateway**, el **balanceador de carga**, los **módulos de rutas y estados de paquetes**, la **base de datos logística** y los **servicios de monitoreo y alertas**.
-
-Después, se organizó el diagrama con una estructura híbrida para reflejar tanto los servicios en la nube como el procesamiento local o regional. Finalmente, se ajustaron nombres, relaciones y flujos para que el modelo fuera coherente con las necesidades del cliente y con el comportamiento esperado del sistema.
+Explique cómo realizaron el trabajo: qué decisiones tomaron, qué herramientas utilizaron, qué aspectos modelaron primero y cómo lo fueron ajustando.
 
 ## Análisis del modelo propuesto
-El modelo representa el flujo principal desde los usuarios de la plataforma web y la app móvil hacia los servicios internos del sistema. Las solicitudes ingresan por el API Gateway, pasan por el balanceador de carga y son dirigidas a los módulos de procesamiento de rutas y estados de paquetes, que a su vez se conectan con la base de datos logística.
-
-Además, el diagrama incorpora monitoreo y alertas, junto con un componente regional asociado a centros de distribución, lo que permite reflejar la naturaleza híbrida de la infraestructura. Este modelo responde a las necesidades del cliente porque muestra los componentes críticos del sistema y permite visualizar de manera clara los posibles riesgos operativos.
-
-### Supuestos tomados
-- La arquitectura de RedExpress es híbrida.
-- Los clientes acceden por web y app móvil.
-- El API Gateway centraliza el acceso a los servicios.
-- El balanceador distribuye las solicitudes entre módulos críticos.
-- La base de datos requiere replicación para mejorar disponibilidad.
-- El monitoreo debe cubrir los componentes más sensibles del sistema.
-
-## Diagnóstico técnico
-
-### Debilidades y cuellos de botella identificados
-- Existe alta dependencia del **API Gateway** y del **balanceador de carga**, lo que puede convertirlos en puntos críticos de falla.
-- El **módulo de procesamiento de rutas** puede saturarse en escenarios de alta demanda.
-- El **módulo de estados de paquetes** puede presentar sobrecarga por actualizaciones constantes en tiempo real.
-- La **base de datos logística** puede convertirse en un cuello de botella por la concentración de lecturas y escrituras.
-- La sincronización entre nube y procesamiento regional puede generar **latencia**.
-- La observabilidad puede ser insuficiente si no se cuenta con métricas, logs y alertas detalladas.
-
-### Riesgos principales
-| Riesgo | Impacto |
-|--------|---------|
-| Punto único de falla en entrada al sistema | Caída parcial o total del servicio |
-| Saturación en módulos críticos | Lentitud en rutas y estados |
-| Sobrecarga en base de datos | Bajo rendimiento general |
-| Latencia entre regiones y nube | Retrasos en rastreo en tiempo real |
-| Escalabilidad limitada | Problemas en temporadas pico |
-
-## Oportunidades de mejora
-- Aumentar la redundancia en componentes críticos.
-- Implementar escalado horizontal en servicios principales.
-- Fortalecer la base de datos con replicación o distribución por zonas.
-- Mejorar la sincronización entre nube y centros regionales.
-- Incorporar caché para reducir carga sobre la base de datos.
-- Reforzar monitoreo con métricas, logs y alertas proactivas.
+Incluya un análisis sobre:
+- Cómo se estructura el modelo entregado
+- Cómo representa las necesidades del cliente
+- Qué supuestos se tomaron
 
 ## Diagrama final entregado
-![Diagrama de infraestructura RedExpress](RedExpressInfra.drawio.png)
+> (Inserte aquí una imagen o enlace al modelo-final.drawio / .asta / PDF)
 
-## Tabla de componentes
+## 📋 Tabla de actores, entidades o componentes (si aplica)
 
-| Componente | Función |
-|------------|---------|
-| API Gateway | Recibir y enrutar solicitudes |
-| Balanceador de carga | Distribuir tráfico entre servicios |
-| Módulo de rutas | Gestionar cálculo y procesamiento de rutas |
-| Módulo de estados | Actualizar y consultar estados de paquetes |
-| BD logística | Almacenar información principal del sistema |
-| Monitoreo y alertas | Supervisar comportamiento y fallas |
-| Centro regional | Soportar operación local y procesamiento híbrido |
+| Nombre del elemento | Tipo | Descripción | Responsable |
+|---------------------|------|-------------|-------------|
+| Ej: Paciente        | Actor | Usuario que agenda una cita médica | Cliente |
 
-## Conclusiones
-El modelo propuesto permite representar de forma clara la infraestructura de RedExpress y entender cómo interactúan sus componentes principales. Además, facilita la identificación de riesgos relacionados con disponibilidad, rendimiento, latencia y escalabilidad.
+## Investigación complementaria
+### Tema investigado: Buenas prácticas de arquitectura en nube, híbrida y on-premise
 
-El análisis muestra que los mayores retos del sistema están en la dependencia de componentes centrales, la carga sobre los servicios críticos y la necesidad de fortalecer la observabilidad. Por ello, el diagrama no solo describe la infraestructura actual, sino que también sirve como base para proponer mejoras.
+Las arquitecturas de TI han evolucionado hacia modelos más flexibles que combinan entornos en la nube, híbridos y on-premise, con el fin de responder a necesidades empresariales como escalabilidad, rendimiento, seguridad y optimización de costos. En este contexto, las buenas prácticas de arquitectura buscan garantizar soluciones alineadas al negocio, eficientes y sostenibles en el tiempo.
+
+Una arquitectura en la nube permite escalar recursos bajo demanda y reducir inversiones iniciales, mientras que los entornos on-premise ofrecen mayor control sobre datos críticos y cumplimiento normativo. La arquitectura híbrida integra ambos modelos, permitiendo a las organizaciones modernizar sus sistemas de manera progresiva y aprovechar lo mejor de cada entorno.
+
+Entre las principales buenas prácticas identificadas se encuentran:
+
+- **Alinear la arquitectura con los objetivos del negocio:**
+El diseño arquitectónico debe responder a las necesidades estratégicas de la organización, considerando factores como costos, seguridad, cumplimiento y crecimiento. Esto implica definir qué cargas de trabajo deben mantenerse on-premise y cuáles migrar a la nube según su valor y criticidad [1][2].
+
+- **Evaluar y clasificar las cargas de trabajo:**
+Es fundamental analizar las aplicaciones y datos para determinar su ubicación óptima. Los sistemas críticos o regulados suelen permanecer en infraestructura local, mientras que cargas de trabajo variables o intensivas en recursos pueden beneficiarse de la nube [2].
+
+- **Adoptar arquitecturas flexibles y evitar dependencia de proveedores:**
+Se recomienda diseñar soluciones que permitan portabilidad y adaptación futura, evitando el vendor lock-in. Estrategias como multicloud o el uso de contenedores facilitan la interoperabilidad entre entornos [1].
+
+- **Garantizar seguridad integrada:**
+La protección de datos debe aplicarse de manera consistente en todos los entornos, incluyendo cifrado en tránsito y en reposo, autenticación robusta y monitoreo continuo. En arquitecturas híbridas, esto es especialmente relevante debido a la interacción entre sistemas [2].
+
+- **Implementar monitoreo y observabilidad:**
+El uso de herramientas de monitoreo permite identificar problemas de rendimiento, latencia y disponibilidad. Esto es clave en entornos híbridos, donde la comunicación entre nube y on-premise puede impactar la experiencia del usuario [2].
+
+- **Optimizar costos y recursos:**
+Aunque la nube reduce inversiones iniciales, es necesario controlar el consumo para evitar costos innecesarios. Una correcta planificación permite equilibrar el uso de recursos entre nube y on-premise [1][2].
+
+- **Diseñar para escalabilidad y modernización gradual:**
+Las arquitecturas deben permitir crecer de forma progresiva, facilitando la migración de sistemas legacy hacia la nube sin afectar la operación actual [1][2].
+
+- **Gestionar la latencia y el rendimiento:¨¨
+En entornos híbridos, es importante optimizar la comunicación entre sistemas para evitar retrasos que afecten aplicaciones críticas o en tiempo real [2].
+
+La aplicación de estas buenas prácticas es clave para diseñar arquitecturas eficientes en entornos empresariales. En el contexto del proyecto de Logística de Aplicación de la encuesta institucional, estas prácticas permiten identificar oportunidades de mejora en la gestión de información, integración de sistemas y optimización de procesos, especialmente en escenarios donde se combinan herramientas locales (como Excel o Microsoft Suite) con posibles soluciones en la nube .La correcta adopción de estos principios demuestra que la arquitectura no solo es una decisión tecnológica, sino un habilitador estratégico que permite mejorar la eficiencia operativa, reducir reprocesos y facilitar la toma de decisiones basada en datos.
+
+### Resumen:
+Las buenas prácticas en arquitecturas de nube, híbridas y on-premise establecen que las soluciones deben estar alineadas con los objetivos del negocio, evaluar adecuadamente las cargas de trabajo y garantizar seguridad, monitoreo y optimización de costos [1][2]. Asimismo, se recomienda diseñar arquitecturas flexibles, evitar dependencia de proveedores y permitir una modernización progresiva de los sistemas [1].
+
+En el contexto del proyecto de Logística de Aplicación, estas prácticas permiten estructurar mejor la gestión de la información, reducir la carga operativa manual y sentar bases para una posible evolución hacia soluciones más automatizadas y escalables. La correcta aplicación de estos principios contribuye a mejorar la eficiencia del proceso y fortalecer la capacidad institucional de adaptación tecnológica
+
+## Referencias
+- [1] Google Cloud, Hybrid and Multicloud Patterns, 2024. [En línea]. Disponible en: https://docs.cloud.google.com/architecture/hybrid-multicloud-patterns?hl=es
+- [2] O. Hernández, “Implementación de Arquitecturas Híbridas: Nube y On-Premises”, 2024. [En línea]. Disponible en: https://www.linkedin.com/pulse/implementaci%C3%B3n-de-arquitecturas-h%C3%ADbridas-nube-y-hernandez-sarmiento-y5j5c/
+
+---
+
+_Este documento hace parte de la entrega del taller 4 del curso AREM (Arquitectura Empresarial) - Universidad de La Sabana._
