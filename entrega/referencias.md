@@ -1,27 +1,24 @@
-# 📚 Referencias Bibliográficas del Taller
+# Referencias Bibliográficas del Taller
 
 Este archivo contiene las fuentes consultadas para el desarrollo del taller, tanto para el componente técnico como para la investigación complementaria.
 
-## 🔖 Taller
-_Taller X - [Nombre del Taller]_
+## Taller
+_Taller 4 - Mapa de Infraestructura y Diagnóstico Técnico_
 
 ---
 
-## 📚 Referencias utilizadas
-
-1. Apellido, Nombre. *Título del libro o artículo*. Editorial, Año. URL o DOI.  
-2. Organización. *Especificación técnica o estándar consultado*. URL.  
-3. Sitio web institucional. "Título del artículo o página". [Enlace](https://ejemplo.com). Fecha de consulta: DD/MM/AAAA.  
-4. Otro recurso académico o técnico citado.
+## Referencias utilizadas
+1. Hernández Sarmiento, O., “Implementación de Arquitecturas Híbridas: Nube y On-Premises”, LinkedIn, 2024. [En línea]. Disponible en: https://www.linkedin.com/pulse/implementaci%C3%B3n-de-arquitecturas-h%C3%ADbridas-nube-y-hernandez-sarmiento-y5j5c/. [Accedido: 10-mar-2026].
+2. Google Cloud, “Crea arquitecturas híbridas y multinube con Google Cloud”, Google Cloud Architecture Center, 2024. [En línea]. Disponible en: https://cloud.google.com/architecture/hybrid-multicloud. [Accedido: 10-mar-2026].
 
 ---
 
-## 📌 Recomendaciones
+## Recomendaciones
 
-- Usa formato APA o IEEE para citar.
-- No incluyas fuentes como Wikipedia si hay mejores alternativas.
-- Si usas inteligencia artificial para redactar o investigar, cítalo como "Fuente asistida por IA: ChatGPT, julio 2025".
+- Se utilizó formato IEEE para la citación.
+- Se priorizaron fuentes oficiales y especializadas en arquitectura de nube e infraestructura híbrida.
+- Fuente asistida por IA: ChatGPT, marzo 2026.
 
 ---
 
-_Este archivo forma parte de la entrega académica del curso AREM - Universidad de La Sabana._
+_Este documento hace parte de la entrega del taller 4 del curso AREM (Arquitectura Empresarial) - Universidad de La Sabana._
