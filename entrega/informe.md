@@ -11,25 +11,60 @@ _Taller 4 - Mapa de Infraestructura y Diagnóstico Técnico_
 | Laura Camila Rodriguez Leon | laurarodleo@unisabana.edu.co |
 
 ## Descripción general del trabajo
-Describa brevemente el objetivo del taller y cómo se desarrolló la actividad.
+El objetivo del taller fue construir el mapa lógico y físico de la infraestructura tecnológica del sistema base, con el fin de identificar debilidades, cuellos de botella y oportunidades de mejora en el proceso de aplicación de encuestas de autoevaluación institucional.
+
+La actividad se basó en analizar el proceso del cliente, identificando actores, herramientas y flujo de información. Con esto, se elaboró un diagrama de infraestructura que muestra la interacción con el sistema, el procesamiento de solicitudes y el almacenamiento de datos. Finalmente, se realizó un diagnóstico técnico para detectar riesgos y oportunidades de mejora.
 
 ## Proceso de desarrollo
-Explique cómo realizaron el trabajo: qué decisiones tomaron, qué herramientas utilizaron, qué aspectos modelaron primero y cómo lo fueron ajustando.
+Se inició analizando el proceso actual del cliente, enfocandonos así en cómo se gestionan los cronogramas, la aplicación de encuestas y la consolidación de resultados. A partir de esto, se tomaron las siguientes decisiones:
+
+- Representar la arquitectura en capas: acceso, aplicación, datos y servicios.
+- Diferenciar claramente entre usuarios (actores) y componentes tecnológicos.
+- Modelar los módulos funcionales (cronogramas, aplicación y resultados) como servicios ejecutados sobre infraestructura.
+- Incluir elementos de seguridad como firewall y acceso mediante red institucional.
+
+Se utilizó draw.io como herramienta principal para el diseño del diagrama, apoyandonos en iconografía tipo AWS para representar los componentes de infraestructura.
 
 ## Análisis del modelo propuesto
-Incluya un análisis sobre:
-- Cómo se estructura el modelo entregado
-- Cómo representa las necesidades del cliente
-- Qué supuestos se tomaron
+
+El modelo se divide en cuatro capas principales:
+- Acceso: donde interactúan los usuarios (decano, docente, PAT y encuestados) a través de la red universitaria y un firewall.
+- Aplicación: donde se encuentran los servicios principales del sistema, incluyendo la API de encuestas y los módulos de gestión.
+- Datos: donde se almacenan la información estructurada (base de datos) y los resultados de las encuestas.
+- Servicios: que soportan el sistema mediante notificaciones y monitoreo.
+
+Con esta estructura es posible lograr separar las responsabilidad y facilitar la comprensión del flujo de información. En cuanto a las necesidades del cliente, se considera que representa el proceso de construcción del cronograma, modela la aplicación de las encuestas mediante los estudiantes PAT y permit visualizar cómo se puede centralizar la información en una base de datos. Además, el modelo evidencia la interacción entre múltiples actores y la dependencia de herramientas tecnológicas para coordinar el proceso.
+
+Para la construcción del modelo se asumió que:
+
+- La información se almacena en una base de datos central.
+- El sistema utiliza servicios institucionales para notificaciones (correo).
+- Se cuenta con algún nivel de monitoreo y generación de reportes, aunque no esté completamente automatizado.
 
 ## Diagrama final entregado
-> (Inserte aquí una imagen o enlace al modelo-final.drawio / .asta / PDF)
+
+![Mapa final](https://github.com/user-attachments/assets/27c7b426-36c6-4f12-9c4a-4db1fdf78ccc)
+
 
 ## 📋 Tabla de actores, entidades o componentes (si aplica)
 
 | Nombre del elemento | Tipo | Descripción | Responsable |
 |---------------------|------|-------------|-------------|
-| Ej: Paciente        | Actor | Usuario que agenda una cita médica | Cliente |
+| Decano | Actor | Define y diligencia el cronograma de encuestas (Plan A y Plan B) | Facultad |
+| Docente | Actor | Permite el acceso a sus clases para la aplicación de encuestas | Programa |
+| PAT (Estudiante aplicador) | Actor | Aplica las encuestas en aula según el cronograma | Coordinación logística |
+| Encuestado | Actor | Estudiante que responde la encuesta | Institucional |
+| Servidor Web | Componente | Permite el acceso al sistema de encuestas | Área de TI |
+| API Encuesta | Componente | Gestiona las solicitudes del sistema y la comunicación entre módulos | Área de TI |
+| Gestión de Cronogramas | Componente | Administra la planificación de las encuestas | Coordinación logística |
+| Gestión de Aplicación de Encuestas | Componente | Controla la ejecución de encuestas en aula | Coordinación logística |
+| Gestión de Resultados | Componente | Procesa y consolida los resultados obtenidos | Coordinación logística |
+| Base de Datos Central | Componente | Almacena la información estructurada del sistema | Área de TI |
+| Repositorio de Resultados | Componente | Guarda los resultados de las encuestas aplicadas | Área de TI |
+| Notificaciones / Correo institucional | Servicio | Envía comunicaciones a los actores del proceso | Área de TI |
+| Monitoreo y Reportes | Servicio | Permite el seguimiento y análisis del proceso | Área de TI |
+
+
 
 ## Investigación complementaria
 ### Tema investigado: Buenas prácticas de arquitectura en nube, híbrida y on-premise
