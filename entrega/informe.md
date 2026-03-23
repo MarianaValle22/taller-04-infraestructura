@@ -96,7 +96,7 @@ Aunque la nube reduce inversiones iniciales, es necesario controlar el consumo p
 - **Diseñar para escalabilidad y modernización gradual:**
 Las arquitecturas deben permitir crecer de forma progresiva, facilitando la migración de sistemas legacy hacia la nube sin afectar la operación actual [1][2].
 
-- **Gestionar la latencia y el rendimiento:¨¨
+- **Gestionar la latencia y el rendimiento:**
 En entornos híbridos, es importante optimizar la comunicación entre sistemas para evitar retrasos que afecten aplicaciones críticas o en tiempo real [2].
 
 La aplicación de estas buenas prácticas es clave para diseñar arquitecturas eficientes en entornos empresariales. En el contexto del proyecto de Logística de Aplicación de la encuesta institucional, estas prácticas permiten identificar oportunidades de mejora en la gestión de información, integración de sistemas y optimización de procesos, especialmente en escenarios donde se combinan herramientas locales (como Excel o Microsoft Suite) con posibles soluciones en la nube .La correcta adopción de estos principios demuestra que la arquitectura no solo es una decisión tecnológica, sino un habilitador estratégico que permite mejorar la eficiencia operativa, reducir reprocesos y facilitar la toma de decisiones basada en datos.
